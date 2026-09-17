@@ -81,3 +81,9 @@ int main() {
 
     return 0;
 } // end of entire program
+
+// questions
+// how could we keep track of how many loops we've been on? "loopCount" variable and ++
+// how could we make the enemies stronger every 3 loops? enemyDiceRoll *= (lopCount / 3)
+
+// how do we know when we're at round 5 or 10 or 15 or 20? if(loopCount % 5 ==0)
