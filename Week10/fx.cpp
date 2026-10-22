@@ -17,7 +17,7 @@ void Say(string something) {
     cout << something << endl; //end line
 }
 
-void CoolSay(string something) {
+void SpaceSay(string something) {
     for(int i = 0; i < something.size(); i++) {
         cout << something[i] << " ";
     }
@@ -60,20 +60,20 @@ void DisplayVector(vector<string> vec) {
     }
 }
 
-int MultThree( int numA){ 
+int Triple( int numA){ 
     return numA * 3;
 }
 
 int main() {
     cout << "Finally, functions!!\n";
 
-    cout << "What is 5 Times 3?\n" << MultThree(5) << endl;
+    cout << "What is 5 tripled?\n" << Triple(5) << endl;
 
     // calling the function
     SayHello();
     Say("What's up buddy?");
     Say("Not much, you?");
-    CoolSay("PEAK");
+    SpaceSay("PEAK");
 
     cout << "2 + 5 = " << Add(2, 5) << endl;
     cout << "345 + -344 = " << Add(345, -344) << endl;
