@@ -8,7 +8,7 @@
 using namespace std;    // comp sci says don't do this
 
 // GLOBAL VARIABLES (accessible by any function)
-int health = 0;
+int health = 10;
 int totalGold = 0;
 bool debug = true;      // set to false when shipping game
 
@@ -45,8 +45,8 @@ void Encounter() {
     string input = "";
 
     if(debug) {
-        cout << "playerRoll = " << playerRoll << "\n";
-        cout <<  "enemyRoll = " << enemyRoll << "\n";
+        cout << "DEBUG playerRoll = " << playerRoll << "\n";
+        cout <<  "DEBUG enemyRoll = " << enemyRoll << "\n";
     }
 
     cin >> input;
@@ -54,7 +54,7 @@ void Encounter() {
 }
 
 void Ending(){
-    if(health <= 0) {
+    if(health = 0) {
         cout << "Ya dead son.\n";
     }
     if(health = 10) {
@@ -69,7 +69,20 @@ int main(){
     // set up
     srand(time(0));     // seed the random number generator
 
+    if (AskYN("You see a mysterious cave ahead. Would you like to explore it?")) {
+        cout << "Alright, let's go!\n";
+    }
+    else {
+        cout << "Oh, okay. bye I guess...\n" << break;
+    }
+
+    while(health > 0) {
+        Encounter();
+
+    }
     
+
+
 
     return 0;
 }
