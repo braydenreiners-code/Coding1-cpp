@@ -8,41 +8,103 @@
 #include <thread>
 using namespace std;
 
+bool AskYN(string question = "Delve Deeper?") {
+
+    string input;
+    while(true) {
+        cout << question << " (y/n)\n";
+        getline(cin, input);
+
+        if(input == "y") {
+            return true;
+        }
+        else if(input == "n") {
+            return false;
+        }
+        else {
+            cout << "Couldn't quite hear you... I'm gonna assume you said yes!\n";
+        }
+        
+    }
+}
+
+
+
 class alien {
 public:
 
 int limbCount;
 bool canFly;
+string Fly;
 float threatLevel;
-string homePlanet;
+string homePlanet = "Fluffy Bluff Galaxy";
+int waitTime = 0;
    
 // Constructor
 alien() {
-    limbCount = rand() % 10 + 0;
+    limbCount = rand() % 10 + 2;
     canFly = rand() % 2;
+
+    if(canFly = 0) {
+        Fly = "can";
+    }
+    else {
+        Fly = "can not";
+    }
+
     threatLevel = rand() % 100 + 0;
-    threatLevel = threatLevel * .01;
-    // Do an array for homePlanet
-    // homePlanet = rand()
 }
 
 void Contact() {
-    cout << "Greetings Earthling, I have "<< limbCount << " limbs,\n";
-    // cout <<
+    cout << "There's an alian infront of you.\n";
+    cout << "Greetings Earthling, I have "<< limbCount << " limbs.\n\n";
+}
+
+void Scan() {
+    while(waitTime < 2) {
+        cout << ".";
+        this_thread::sleep_for(1s);  
+        waitTime += 1; 
+    }
+    cout << ".";
+    this_thread::sleep_for(1s);  
+
+    cout << "This alien has a threat level of " << threatLevel << "\n";
+    cout << "This alien " << Fly << " fly.\n";
 }
 
 void Depart() {
+    cout << "\nWell, goodbye Earthling, I must return to my home planet, "<< homePlanet << ".\nFair well!\n";
 
+    while(waitTime < 4) {
+        cout << ".";
+        this_thread::sleep_for(1s);  
+        waitTime += 1; 
+    }
+    cout << ".";
+    this_thread::sleep_for(1s);
+
+    cout << "\nThe alien has left.\n";
 }
 
 };
 
 int main() {
     srand(time(0));
-    cout << "There's an alian infront of you.\n";
 
     alien ET;
-    alien.Contact();
-    alien.Depart();
+    ET.Contact();
+    
+    if (AskYN("Do you want to scan the alien?")) {
+        cout << "Scanning";
+        ET.Scan();
+    }
+    else {
+        cout << "You're right, it's kinda rude to scan without asking.\n";
+    }
 
+    ET.Depart();
+
+
+    return 0;
 }
