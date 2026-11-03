@@ -16,7 +16,6 @@ using namespace std;
         // which run when the object is created
         // or destroyed
 
-
 class Robot {
 public:
     string name; 
